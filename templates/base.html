@@ -1,11 +1,12 @@
 <!doctype html>
 <html>
-    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/base.css') }}">
     <head>
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='styles/base.css') }}">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='styles/normalize.css') }}">
         <title>{{page_title}}</title>
     </head>
 <body>
-<a href='/blog'>View Blogs</a> | <a href='/newpost'>Create New Blog Post</a>
+<a href='/'>Home</a> | <a href='/login'>Log-in</a> | <a href='/blog'>View Blogs</a> | <a href='/newpost'>Create New Blog Post</a> | <a href='/logout'>Logout</a>
     
    <h1 align='center'>{{main_title}}</h1>
 

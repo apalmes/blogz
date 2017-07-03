@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    {% for entry in user_post|reverse   %}
+    <a href='/blog?id={{entry.id}}'><h1>{{ entry.title }}</h1></a><p class='body'>{{ entry.body}}</p>
+    <p class='author'>Written by <a class='author' href='/blog?user={{owner.username}}'>{{ owner.username }}</a><br>{{entry.post_date}}</p>
+  {% endfor %}
+{% endblock %}

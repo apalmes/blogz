@@ -3,8 +3,13 @@
 {% block content %}
 
     {% for entry in blog_entries|reverse   %}
-    <li><a href='/blog?id={{entry.id}}'><h2>{{ entry.title }}</h2></a><p>{{ entry.body}}</p>
+    <a href='/blog?id={{entry.id}}'><h2>{{ entry.title }}</h2></a><p class='body'>{{ entry.body}}</p>
+      
+      {% for username in users %}
+        {% if username.id == entry.owner_id %}
+    <p class='author'>Written by <a class='author' href='/blog?user={{username.username}}'>{{ username.username }}</a><br>{{entry.post_date}}</p>
+    {% endif %}
+    {% endfor %}
   {% endfor %}
   
-
 {% endblock %}

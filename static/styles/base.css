@@ -1,43 +1,40 @@
-body{
+html {
 
-    background-color: lightseagreen;
-
+    margin: 0 15%;
 }
 
-h1{
+body {
+    background-color: lightseagreen;
+}
+
+h1 {
     font-family:Palatino linotype;
     color: white;
     text-align:center;
 }
 
-.error{
-                color: red;
-                font-family:Palatino linotype;
+.error {
+    color: red;
+    font-family:Palatino linotype;
 }
 
-a{
+a {
     font-family:Palatino linotype;
     text-align: center;
     color:white
 }
 
-a:hover{ 
+a:hover { 
     color: lightgrey;
-
-
 }
     
-
-
 p {
     font-family:Palatino linotype;
-    border: 2px solid white;
     border-radius: 8px;
     outline-color: white;
     text-align: center;
     color: white;
     padding: 15px;
-    
 }
 
 textarea {
@@ -46,8 +43,8 @@ textarea {
     font-size: 15px;
     font-family: Palatino linotype;
     color: lightseagreen
-
 }
+
 .label {
     color: white;
 }
@@ -55,9 +52,10 @@ textarea {
 div{
     margin-left:auto;
     margin-right:auto;
-    width: 30%;
+    width: 50%;
     padding: 15px;
-
+    font-family: Palatino Linotype;
+    color: white;
 }
 
 .input{
@@ -65,6 +63,9 @@ div{
     color:lightseagreen;
     font-size: 15px;
     font-family: Palatino Linotype;
+}
 
-
+.author{
+    font-style: italic;
+    font-size: 12px;
 }
