@@ -1,4 +1,3 @@
-
 from flask import Flask, request, redirect, render_template, flash, session, url_for
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
@@ -51,8 +50,6 @@ def index():
     page_title = 'Blogz'
     return render_template('index.html', users=users, page_title=page_title)
     
-
-
 
 @app.route('/login', methods=['POST', 'GET'])
 def login():
@@ -119,8 +116,6 @@ def signup():
         else:
             return render_template('signup.html', title='Sign-up', username_error=username_error, password_error=password_error, verify_error=verify_error, page_title=page_title)
 
-    
-
     return render_template('signup.html', page_title=page_title)
     
 
@@ -156,7 +151,6 @@ def blogs():
 
 @app.route('/newpost', methods=['POST', 'GET'])
 def newpost():
-
     owner = User.query.filter_by(username=session['username']).first()
     error = ''
     if request.method == 'POST':
@@ -177,8 +171,8 @@ def newpost():
     page_title = 'Blogz'
     main_title = 'Add New Blog Entry'
 
-
     return render_template('newpost.html', page_title=page_title, main_title=main_title, error=error)
+
 
 if __name__ == '__main__':
     app.run()

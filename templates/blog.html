@@ -8,6 +8,7 @@
       {% for username in users %}
         {% if username.id == entry.owner_id %}
     <p class='author'>Written by <a class='author' href='/blog?user={{username.username}}'>{{ username.username }}</a><br>{{entry.post_date}}</p>
+    <hr>
     {% endif %}
     {% endfor %}
   {% endfor %}
