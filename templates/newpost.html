@@ -13,7 +13,13 @@
         <textarea name='body'>{{request.form['body']}}</textarea><br>
         </label></div>
 
-        <div class='error'>{{error}}</div>
+        <div>{% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            {% for category, message in messages %}
+            <a class="{{category}}">{{ message }}</a>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
         <div><input type="submit" value='Add Blog' /></div>
 
     </form>

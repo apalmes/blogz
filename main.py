@@ -60,7 +60,7 @@ def login():
         if not user:
             flash('Invalid Username', 'error')
             return redirect('/login')
-        if user and password != user.pw_hash:
+        if user and check_pw_hash(password, user.pw_hash) == False:
             flash('Invalid Password', 'error')
         if user and check_pw_hash(password, user.pw_hash):
             session['username'] = username
@@ -152,13 +152,12 @@ def blogs():
 @app.route('/newpost', methods=['POST', 'GET'])
 def newpost():
     owner = User.query.filter_by(username=session['username']).first()
-    error = ''
     if request.method == 'POST':
         title = request.form['title']
         body = request.form ['body']
 
         if (title == '') or (body == ''):
-            error = 'Oops, did you forget something...?'
+            flash('Oops, did you forget something...?', 'error')
         else:
             new_blog = Blog(title, body, owner)
             db.session.add(new_blog)
@@ -171,7 +170,7 @@ def newpost():
     page_title = 'Blogz'
     main_title = 'Add New Blog Entry'
 
-    return render_template('newpost.html', page_title=page_title, main_title=main_title, error=error)
+    return render_template('newpost.html', page_title=page_title, main_title=main_title)
 
 
 if __name__ == '__main__':
