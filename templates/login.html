@@ -1,32 +1,36 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Log-in to get Bloggin'</h1>
-<p><a href="/signup">Signup</a> for a new account now!</p>
-<form action="/login" method="post">
+    <h1>Log-in to get Bloggin'</h1>
+    <p><a href="/signup">Signup</a> for a new account now!</p>
+    <form action="/login" method="post">
 
-<div>{% with messages = get_flashed_messages(with_categories=true) %}
+        <!-- this flash can go in base.html -->
+        <div>{% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
-            {% for category, message in messages %}
-            <a class="{{category}}">{{ message }}</a>
-            {% endfor %}
+                {% for category, message in messages %}
+                    <a class="{{ category }}">{{ message }}</a>
+                {% endfor %}
             {% endif %}
-            {% endwith %}</div>
-    <div><table>
-        <tr>
-            <td><label for="username">Username</label></td>
-            <td>
-                <input size='40' class='input2' name="username" type="text" value='{{request.form['username']}}'>
-                <span class=error>{{username_error}}</span>
-            </td>
-        </tr>
-        <tr>
-            <td><label for="password">Password</label></td>
-            <td>
-                <input size='40' class='input2' name="password" type="password">
-            </td>
-        </tr>
-    </table>
-    <input type="submit" value="Login"></div>
-</form>
+        {% endwith %}</div>
+
+        <div>
+            <table>
+                <tr>
+                    <td><label for="username">Username</label></td>
+                    <td>
+                        <input size='40' class='input2' name="username" type="text"
+                               value='{{ request.form['username'] }}'>
+                        <span class=error>{{ username_error }}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="password">Password</label></td>
+                    <td>
+                        <input size='40' class='input2' name="password" type="password">
+                    </td>
+                </tr>
+            </table>
+            <input type="submit" value="Login"></div>
+    </form>
 {% endblock %}

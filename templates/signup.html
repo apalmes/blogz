@@ -1,28 +1,33 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Signup to start your new blog now!</h1>
-<form action="/signup" method="post">
-   <div> <table>
-        <tr>
-            <td><label for="username">Username</label></td>
-            <td>
-                <input name='username' class='input2' type='text' value='{{request.form['username']}}' /><span class=error>{{username_error}}</span>
-            </td>
-        </tr>
-        <tr>
-            <td><label for="password">Password</label></td>
-            <td>
-                <input name='password' class='input2' type='password' value='{{password}}' /><span class=error>{{password_error}}</span>
-            </td>
-        </tr>
-        <tr>
-            <td><label for="verify">Verify Password</label></td>
-            <td>
-                <input name='verify' class='input2' type='password' value='{{verify}}' /><span class=error>{{verify_error}}</span>
-            </td>
-        </tr>
-    </table></div>
-    <div><input type="submit" value="Sign up!"></div>
-</form>
+    <h1>Signup to start your new blog now!</h1>
+    <form action="/signup" method="post">
+        <div>
+            <table>
+                <tr>
+                    <td><label for="username">Username</label></td>
+                    <td>
+                        <input name='username' class='input2' type='text' value='{{ request.form['username'] }}'/><span
+                            class=error>{{ username_error }}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="password">Password</label></td>
+                    <td>
+                        <input name='password' class='input2' type='password' value='{{ password }}'/><span
+                            class=error>{{ password_error }}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="verify">Verify Password</label></td>
+                    <td>
+                        <input name='verify' class='input2' type='password' value='{{ verify }}'/><span
+                            class=error>{{ verify_error }}</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div><input type="submit" value="Sign up!"></div>
+    </form>
 {% endblock %}

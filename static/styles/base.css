@@ -8,35 +8,35 @@ body {
 }
 
 h1 {
-    font-family:Palatino linotype;
+    font-family: Palatino linotype;
     color: white;
-    text-align:center;
+    text-align: center;
 }
 
 h2 {
-    font-family:Palatino linotype;
+    font-family: Palatino linotype;
     color: white;
-    text-align:center;
+    text-align: center;
     margin: auto
 }
 
 .error {
     color: red;
-    font-family:Palatino linotype;
+    font-family: Palatino linotype;
 }
 
 a {
-    font-family:Palatino linotype;
+    font-family: Palatino linotype;
     text-align: center;
-    color:white
+    color: white
 }
 
-a:hover { 
+a:hover {
     color: lightgrey;
 }
-    
+
 p {
-    font-family:Palatino linotype;
+    font-family: Palatino linotype;
     border-radius: 8px;
     outline-color: white;
     text-align: center;
@@ -56,36 +56,35 @@ textarea {
     color: white;
 }
 
-div{
-    margin-left:auto;
-    margin-right:auto;
+div {
+    margin-left: auto;
+    margin-right: auto;
     width: 50%;
     padding: 15px;
     font-family: Palatino Linotype;
     color: white;
 }
 
-.input{
-    width:400px;
-    color:lightseagreen;
+.input {
+    width: 400px;
+    color: lightseagreen;
     font-size: 15px;
     font-family: Palatino Linotype;
 }
 
-.input2{
-    color:lightseagreen;
+.input2 {
+    color: lightseagreen;
     font-size: 15px;
     font-family: Palatino Linotype;
 }
 
-.author{
+.author {
     font-style: italic;
     font-size: 12px;
 }
 
-hr{
+hr {
     color: white;
-
 
 }
 

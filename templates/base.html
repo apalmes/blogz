@@ -1,20 +1,19 @@
 <!doctype html>
-<html>
-    <head>
-        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='styles/base.css') }}">
-    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='styles/normalize.css') }}">
-        <title>{{page_title}}</title>
-    </head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/base.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/normalize.css') }}">
+    <title>{{ page_title }}</title>
+</head>
 <body>
-<a href='/'>Home</a> <a>|</a> <a href='/login'>Log-in</a> <a>|</a> <a href='/blog'>View Blogs</a> <a>|</a> <a href='/newpost'>Create New Blog Post</a><a class='logout' href='/logout'>Logout</a>
-    
-   <h1 align='center'>{{main_title}}</h1>
+<a href='/'>Home</a> <a>|</a> <a href='/login'>Log-in</a> <a>|</a> <a href='/blog'>View Blogs</a> <a>|</a> <a
+        href='/newpost'>Create New Blog Post</a><a class='logout' href='/logout'>Logout</a>
 
-   
+<h1 align='center'>{{ main_title }}</h1>
 
-    {% block content %}
-    
-    {% endblock %}
+{% block content %}
+{% endblock %}
 
 </body>
 </html>

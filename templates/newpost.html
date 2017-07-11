@@ -2,25 +2,26 @@
 
 {% block content %}
 
- <form method='post'>
+    <form method='post'>
         <div><label>
             <a>Title for your new blog:</a>
-            <br><input class='input' type='text' name='title' value='{{request.form['title']}}'></div>
+            <br><input class='input' type='text' name='title' value='{{ request.form['title'] }}'></div>
         </label>
-        
+
         <div><label><a>Your new blog:</a>
-        <br>
-        <textarea name='body'>{{request.form['body']}}</textarea><br>
+            <br>
+            <textarea name='body'>{{ request.form['body'] }}</textarea><br>
         </label></div>
 
         <div>{% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
-            {% for category, message in messages %}
-            <a class="{{category}}">{{ message }}</a>
-            {% endfor %}
+                {% for category, message in messages %}
+                    <a class="{{ category }}">{{ message }}</a>
+                {% endfor %}
             {% endif %}
-            {% endwith %}
-        <div><input type="submit" value='Add Blog' /></div>
+        {% endwith %}
+            <div><input type="submit" value='Add Blog'/></div>
+        </div>
 
     </form>
 
